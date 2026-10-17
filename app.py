@@ -21,9 +21,12 @@ with open("model", "rb") as file:
 with open("bow", "rb") as file:
     bow = pickle.load(file)
 
+nltk.download("stopwords")
+nltk.download("wordnet")
 
 no_stopword = set(stopwords.words("english"))
 lemmatizer = WordNetLemmatizer()
+
 
 review = st.text_area("Enter your movie review")
 
